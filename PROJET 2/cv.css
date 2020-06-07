@@ -1,13 +1,17 @@
 h3
 {
 	text-align: left;
-	color:black;
-	font-family:'amblebold';
+	color:yellow;
+	font-size:1.3em;
+	border-bottom:2px solid black;
+
 }
 
 h2 {
 	background-color: rgb(161,165,20);
 	color: rgb(255,253,59);
+	height:35px;
+	line-height:35px;
 }
 
 
@@ -99,7 +103,6 @@ header {
 	color: white;
 	
 }
-
 
 
 article
