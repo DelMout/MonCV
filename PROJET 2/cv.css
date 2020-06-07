@@ -5,10 +5,25 @@ h3
 	font-family:'amblebold';
 }
 
+h2 {
+	background-color: rgb(161,165,20);
+	color: rgb(255,253,59);
+}
+
+
+
 *
 {
 font-family:'amblebold'	
 }
+
+body
+{
+	display:flex;
+	background-color:slategrey;
+}
+
+
 
 @font-face 
 {
@@ -23,9 +38,6 @@ font-family:'amblebold'
     font-style: normal;
 
 }
-
-
-
 
 
 #cercle
@@ -50,12 +62,6 @@ font-family:'amblebold'
 
 
 
-#contenu
-{
-	/*display:flex;	*/
-	/*justify-content: space-between;*/
-}
-
 #lisere
 {
 	display:flex;
@@ -64,32 +70,42 @@ font-family:'amblebold'
 	text-align:center;
 	width:15%;
 	background-color:rgb(255,253,59);
+	color:darkslategray;
 	font-family:'amblebold';
-	padding:10px;
-	position:absolute;
-
-
+	order:-1;
 }
+#lisere p
+{
+	padding:10px;
+}
+
+
+
+#contenu {
+	display: flex;
+	flex-direction: column;
+}
+
 
 header {
 	text-align: center;
+	border:3px dashed green;
+	height:13%;
 }
 
 
-#corps
-{
-	display:flex;
-	position:relative;
-	left:18%;
-	justify-content:space-between;
-	width:82%;
-	color:white;
+#corps {
+	justify-content: space-between;
+	color: white;
+	
 }
+
+
 
 article
 {
 	flex:1;
-	background-color:grey;
+	border:3px dotted blue;
 	padding:10px;
 	margin:3px;
 }
