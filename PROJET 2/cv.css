@@ -1,0 +1,115 @@
+h3
+{
+	text-align: left;
+	color:black;
+	font-family:'amblebold';
+}
+
+*
+{
+font-family:'amblebold'	
+}
+
+@font-face 
+{
+    font-family: 'amblebold';
+    src: url('amble/Amble-Bold-webfont.eot');
+    src: url('amble/Amble-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('amble/Amble-Bold-webfont.woff2') format('woff2'),
+         url('amble/Amble-Bold-webfont.woff') format('woff'),
+         url('amble/Amble-Bold-webfont.ttf') format('truetype'),
+         url('amble/Amble-Bold-webfont.svg#amblebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+
+#cercle
+{
+	display: inline-block;
+    width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin:auto;
+}
+
+#photo_moi
+{
+	width:inherit;
+	height:inherit;
+	border-radius:inherit;
+	position:relative;
+	top:-20px;
+}
+
+
+
+
+#contenu
+{
+	/*display:flex;	*/
+	/*justify-content: space-between;*/
+}
+
+#lisere
+{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	text-align:center;
+	width:15%;
+	background-color:rgb(255,253,59);
+	font-family:'amblebold';
+	padding:10px;
+	position:absolute;
+
+
+}
+
+header {
+	text-align: center;
+}
+
+
+#corps
+{
+	display:flex;
+	position:relative;
+	left:18%;
+	justify-content:space-between;
+	width:82%;
+	color:white;
+}
+
+article
+{
+	flex:1;
+	background-color:grey;
+	padding:10px;
+	margin:3px;
+}
+
+@media all and (max-width: 1024px)
+{
+	#lisere
+	{
+		display:none;
+	}
+
+	#corps
+	{
+		flex-direction: column;
+		position:absolute;
+		left:0;
+		width:auto;
+	}
+
+
+
+}
+
