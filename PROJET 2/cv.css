@@ -32,7 +32,7 @@ font-family:'amblebold'
 body
 {
 	display:flex;
-	background-color:slategrey;
+	
 }
 
 
@@ -102,6 +102,15 @@ body
 	overflow:hidden;
 }
 
+#contact{
+	text-align:left;
+}
+
+#propos{
+	text-align:justify;
+	hyphens:auto;
+}
+
 
 #contenu {
 	display: flex;
@@ -115,6 +124,10 @@ header {
 	height:13%;
 }
 
+	header span {
+		color: rgb(255,210,20);
+	}
+
 header p
 {
 	font-size:1.5em;
@@ -122,17 +135,27 @@ header p
 
 #corps {
 	justify-content: space-between;
-	color: white;
-	
+	color: darkslategray;
+	padding: 10px;
+	margin: 3px;
 }
+
+#experience{
+	display:flex;
+	flex-direction:row;
+}
+
+aside{
+	flex:1;
+}
+
 
 
 article
 {
-	flex:1;
+	flex:2;
 	border:3px dotted blue;
-	padding:10px;
-	margin:3px;
+	
 }
 
 @media all and (max-width: 1024px)
