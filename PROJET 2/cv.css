@@ -1,14 +1,22 @@
-h3
-{
+h3 {
 	text-align: left;
-	color:yellow;
-	font-size:1.3em;
-	border-bottom:2px solid black;
-
+	color: black;
+	opacity:0.6;
+	font-size: 1.3em;
+	border-bottom: 3px solid rgb(255,253,59);
+	text-transform:uppercase;
 }
 
+h3 i
+{
+	margin-right:10px;
+}
+
+
+
 h2 {
-	background-color: rgb(161,165,20);
+	background-color: black;
+	opacity:0.6;
 	color: rgb(255,253,59);
 	height:35px;
 	line-height:35px;
@@ -46,8 +54,8 @@ body
 
 #cercle
 {
-	display: inline-block;
-    width: 168px;
+  display: inline-block;
+  width: 168px;
   height: 168px;
   border-radius: 50%;
   overflow: hidden;
@@ -68,8 +76,6 @@ body
 
 #lisere
 {
-	display:flex;
-	flex-direction:column;
 	justify-content:center;
 	text-align:center;
 	width:15%;
@@ -83,6 +89,18 @@ body
 	padding:10px;
 }
 
+#lisere i {
+	display: inline-block;
+	text-align: center;
+	width:30px;
+	height:30px;
+	border-radius: 50%;
+	border: 3px solid darkslategray;
+	padding:1%;
+	justify-content:space-around;
+	margin:6px;
+	overflow:hidden;
+}
 
 
 #contenu {
@@ -97,6 +115,10 @@ header {
 	height:13%;
 }
 
+header p
+{
+	font-size:1.5em;
+}
 
 #corps {
 	justify-content: space-between;
