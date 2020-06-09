@@ -1,4 +1,4 @@
-h3 {
+caption {
 	text-align: left;
 	color: black;
 	opacity:0.6;
@@ -7,12 +7,19 @@ h3 {
 	text-transform:uppercase;
 }
 
-h3 i
+caption i
 {
 	margin-right:10px;
 }
 
+tr{
+	height:80px;
+	
+}
 
+#colonne1{
+	width:30%;
+}
 
 h2 {
 	background-color: black;
