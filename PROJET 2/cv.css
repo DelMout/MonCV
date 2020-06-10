@@ -14,12 +14,32 @@ caption i
 
 tr{
 	height:80px;
+	vertical-align:top;
+}
+
+td{
+	/*padding:50px;*/
+}
+
+
+
+table{
+	width:100%;
+}
+
+
+#colonne1{
+	width:2%;
+}
+#colonne2 {
+	width: 30%;
+}
+
+.puce{
+	font-size:40px;
 	
 }
 
-#colonne1{
-	width:30%;
-}
 
 h2 {
 	background-color: black;
