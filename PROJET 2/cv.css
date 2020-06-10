@@ -1,4 +1,4 @@
-caption {
+h3 {
 	text-align: left;
 	color: black;
 	opacity:0.6;
@@ -7,33 +7,11 @@ caption {
 	text-transform:uppercase;
 }
 
-caption i
-{
-	margin-right:10px;
-}
-
-tr{
-	height:80px;
-	vertical-align:top;
-}
-
-td{
-	/*padding:50px;*/
-}
-
-
-
-table{
-	width:100%;
-}
-
-
-#colonne1{
-	width:2%;
-}
-#colonne2 {
-	width: 30%;
-}
+	h3 i {
+		margin-right: 20px;
+		color: rgb(255, 106, 0);
+		font-size:1.3em;
+	}
 
 
 
@@ -59,6 +37,9 @@ body
 	
 }
 
+p {
+	hyphens: auto;
+}
 
 
 @font-face 
@@ -132,7 +113,7 @@ body
 
 #propos{
 	text-align:justify;
-	hyphens:auto;
+	hyphens:auto;	/*césures*/
 }
 
 
@@ -148,7 +129,7 @@ header {
 	height:13%;
 }
 
-	header span {
+header span {
 		color: rgb(255,210,20);
 	}
 
@@ -167,38 +148,69 @@ header p
 	align-content:space-between;
 }
 
-#experience{
-	display:flex;
-	flex-direction:row;
-}
 
 ul{
 	margin:0;
-	padding-left:5%;
+	padding-left:0.5em;
+	list-style:none;
+	/*text-indent:-0.5em;*/
+	
+	
+	}
+
+li {
+	/*list-style-position: outside;*/
 }
+
+li::before{
+	content:"\2022";
+	color:red;
+	font-size:1.5em;
+	display:inline-block;
+	width:1em;
+	margin-left:-1em;
+	/*line-height:0.5em;
+	padding-right:5px;
+	*/
+	
+	/*margin-right:1em;
+	background-color:deepskyblue;
+	border:2px solid black;
+	line-height:1em;*/
+}
+
+/*li{
+	text-indent:-0.5em;
+}*/
+
 
 .liste{
 	
 	display:flex;
+	margin-top:20px;
 	
 }
 
 
 aside{
-		
-	width:30%;
-	
-	
+	width:20%;
+	font-size:16px;
+	/*border:2px solid black;*/
+	margin-left:1em;
+	vertical-align:text-top;
+	padding:0;
 }
-
-
 
 article
 {
-	
-	border:3px dotted blue;
-	
-	
+	display:flex;
+	width:80%;
+	flex-direction:column;
+	font-size:18px;
+}
+
+h4{
+	margin:0;
 }
 
 @media all and (max-width: 1024px)
