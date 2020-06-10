@@ -35,10 +35,7 @@ table{
 	width: 30%;
 }
 
-.puce{
-	font-size:40px;
-	
-}
+
 
 
 h2 {
@@ -165,6 +162,9 @@ header p
 	color: darkslategray;
 	padding: 10px;
 	margin: 3px;
+	display:flex;
+	flex-direction:column;
+	align-content:space-between;
 }
 
 #experience{
@@ -172,16 +172,32 @@ header p
 	flex-direction:row;
 }
 
+ul{
+	margin:0;
+	padding-left:5%;
+}
+
+.liste{
+	
+	display:flex;
+	
+}
+
+
 aside{
-	flex:1;
+		
+	width:30%;
+	
+	
 }
 
 
 
 article
 {
-	flex:2;
+	
 	border:3px dotted blue;
+	
 	
 }
 
