@@ -1,11 +1,11 @@
 h3 {
 	text-align: left;
 	color: black;
-	/*opacity:0.6;*/
-	font-size: 1.3em;
+	font-size: 1.5em;
 	border-bottom: 3px solid rgb(255,234,0);
 	text-transform:uppercase;
 	line-height:2.5em;
+	vertical-align:middle;
 
 }
 
@@ -19,8 +19,7 @@ h3 {
 
 
 h2 {
-	background-color: black;
-	opacity: 0.6;
+	background-color:rgb(66,66,66);
 	color: rgb(255,234,0);
 	height: 35px;
 	line-height: 35px;
@@ -29,8 +28,6 @@ h2 {
 body {
 	font-family: 'amblebold'; 
 	display:flex;
-	margin-right:10%;
-	margin-left:10%;
 	background-color:darkslategray;
 	align-content:flex-start;
 }
@@ -51,15 +48,17 @@ body {
 
 }
 
+/*LISERÉ*/
 
+/*ma photo*/
 #cercle {
 	display: inline-block;
 	width: 168px;
 	height: 168px;
 	border-radius: 50%;
 	overflow: hidden;
-	margin:auto;
-	flex: 1.2;
+	margin-left:auto;
+	margin-right:auto;
 	border: 4px solid rgba(0,0,0,0.1);
 }
 
@@ -72,8 +71,7 @@ body {
 	top:-20px;
 }
 
-
-
+/*le bandeau jaune*/
 
 #lisere {
 	display: flex;
@@ -81,46 +79,57 @@ body {
 	text-align: center;
 	width: 33%;
 	background-color: rgb(255,234,0);
-	color: darkslategray;
+	color: rgb(66,66,66);
 	order: -1;
-	align-content: center;
-	
+		
 }
-#lisere p
-{
-	padding:10px;
-}
+#lisere p {
+		padding-left: 14%;
+		padding-right: 14%;
+	}
 
-#lisere i {
-	display: inline-block;
-	width:30px;
-	height:30px;
-	border-radius: 50%;
-	border: 3px solid darkslategray;
-	padding:1%;
-	/*justify-content:space-around;*/
-	margin:6px;
-	overflow:hidden;
-}
 
-#contact{
+
+.contact{
 	text-align:left;
-	flex:2;
+	
+	}
+
+.contact_dern {
+	text-align: left;
+	margin-bottom:5%;
 }
+
+
 
 #propos{
 	text-align:justify;
-	flex:4;
 	hyphens:auto;
+	margin-bottom:auto;
 }
 
 #loisirs{
 	display:flex;
 	justify-content:center;
-	align-items:center;
-	flex:1;
+	}
+
+/*les icones loisirs*/
+
+#lisere i {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 3px solid rgb(66,66,66);
+	padding: 1%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	overflow: hidden;
 }
 
+/*Partie droite du CV*/
 #contenu {
 	display: flex;
 	flex-direction: column;
@@ -130,37 +139,44 @@ body {
 
 h1{
 	/*border:1px dotted blue;*/
-	font-size:30px;
+	font-size:3em;
+	margin:0;
 }
 
 
 
 header {
-	display:flex;
-	flex-direction:column;
-	height:12%;
-	padding-left:20px;
-	font-size:22px;
-	padding-top:40px;
-	
-	
+	display: flex;
+	flex-direction: column;
+	height: 15%;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 2em;
+	margin-top: 10%;
+	margin-bottom: 10%;
 }
 
-	header span {
+	h1 span {	/*Mis en couleur de mon prénom*/
 		color: rgb(255,234,0);
 	}
 
+header p span { /*soulignées les 5 1res lettres de Développeuse*/
+	border-bottom: 3px solid rgb(255,234,0);
+	}
+
+header p{
+	margin:0;
+}
 
 
 #corps {
 	color: darkslategray;
 	padding: 10px;
-	padding-left: 20px;
-	padding-right:20px;
-	display:flex;
-	flex-direction:column;
-	height:88%;
-	
+	padding-left: 5%;
+	padding-right: 5%;
+	display: flex;
+	flex-direction: column;
+	height: 88%;
 }
 
 
@@ -177,7 +193,7 @@ li {
 	/*list-style-position: outside;*/
 }
 
-	li::before {
+	li::before {		/*remplacement de la puce*/
 		content: "\2022";
 		color: rgb(255,234,0);
 		font-size: 1.5em;
@@ -222,7 +238,11 @@ h4{
 	font-weight:bold;
 }
 
-@media all and (max-width: 1024px)
+#reco{
+	display:flex;
+}
+
+/*@media all and (max-width: 1024px)
 {
 	#lisere
 	{
@@ -240,4 +260,4 @@ h4{
 
 
 }
-
+*/
