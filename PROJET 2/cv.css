@@ -6,6 +6,7 @@ h3 {
 	text-transform:uppercase;
 	line-height:2.5em;
 	vertical-align:middle;
+	margin-bottom:5%;
 
 }
 
@@ -18,40 +19,49 @@ h3 {
 
 
 
-h2 {
+h2 {		/*Titres bandeau dans liseré*/
+	display:flex;
 	background-color:rgb(66,66,66);
 	color: rgb(255,234,0);
-	height: 35px;
-	line-height: 35px;
+	height: 3%;
+	align-items:center;
+	justify-content:center;
+	/*
+	line-height: 0;*/
 }
 
 body {
-	font-family: 'amblebold'; 
+	font-family: 'acme'; 
 	display:flex;
 	background-color:darkslategray;
 	align-content:flex-start;
+	color:rgb(66,66,66);
+}
+
+
+@font-face {
+	font-family: 'acme';
+	src: url('acme/acme-regular-webfont-webfont.eot');
+	src: url('acme/acme-regular-webfont-webfont.eot?#iefix') format('embedded-opentype'), url('acme/acme-regular-webfont-webfont.woff') format('woff'), url('acme/acme-regular-webfont-webfont.ttf') format('truetype'), url('acme/acme-regular-webfont-webfont.svg#webfontregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 
 
-@font-face 
-{
-    font-family: 'amblebold';
-    src: url('amble/Amble-Bold-webfont.eot');
-    src: url('amble/Amble-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('amble/Amble-Bold-webfont.woff2') format('woff2'),
-         url('amble/Amble-Bold-webfont.woff') format('woff'),
-         url('amble/Amble-Bold-webfont.ttf') format('truetype'),
-         url('amble/Amble-Bold-webfont.svg#amblebold') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
 
-/*LISERÉ*/
 
-/*ma photo*/
-#cercle {
+	@font-face {
+		font-family: 'amblebold';
+		src: url('amble/Amble-Bold-webfont.eot');
+		src: url('amble/Amble-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('amble/Amble-Bold-webfont.woff2') format('woff2'), url('amble/Amble-Bold-webfont.woff') format('woff'), url('amble/Amble-Bold-webfont.ttf') format('truetype'), url('amble/Amble-Bold-webfont.svg#amblebold') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	/*LISERÉ*/
+	/*ma photo*/
+	#cercle {
 	display: inline-block;
 	width: 168px;
 	height: 168px;
@@ -141,6 +151,7 @@ h1{
 	/*border:1px dotted blue;*/
 	font-size:3em;
 	margin:0;
+	color:rgb(0,0,0);
 }
 
 
@@ -182,27 +193,27 @@ header p{
 
 ul{
 	margin:0;
-	padding-left:0.5em;
+	padding-left:1em;
 	list-style:none;
-	/*text-indent:-0.5em;*/
-	
-	
 	}
 
-li {
-	/*list-style-position: outside;*/
-}
 
-	li::before {		/*remplacement de la puce*/
-		content: "\2022";
+	li:before { /*remplacement de la puce par cercle plein*/
+		content: "\002B24"; /*puce en forme de cercle plein*/
 		color: rgb(255,234,0);
-		font-size: 1.5em;
 		display: inline-block;
-		width: 1em;
-		margin-left: -1em;
+		width: 2em;
+		margin-left: -2em;
 	}
 
-
+.double:before { /*remplacement de la puce par double cercle plein _ 1re puce*/
+	content: "\0025C9"; /*puce en forme de doucle cercle forme pleine*/
+	color: rgb(255,234,0);
+	display: inline-block;
+	width: 1.7em;
+	margin-left: -1.7em;
+	font-size:1.3em;
+}
 
 
 .liste{
