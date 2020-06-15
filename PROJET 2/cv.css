@@ -1,44 +1,4 @@
-h3 {
-	text-align: left;
-	color: black;
-	font-size: 1.5em;
-	border-bottom: 3px solid rgb(255,234,0);
-	text-transform:uppercase;
-	line-height:2.5em;
-	vertical-align:middle;
-	margin-bottom:5%;
-
-}
-
-	h3 i {
-		margin-right: 20px;
-		color: rgb(255,234,0);
-		font-size: 1.3em;
-	}
-
-
-
-
-h2 {		/*Titres bandeau dans liseré*/
-	display:flex;
-	background-color:rgb(66,66,66);
-	color: rgb(255,234,0);
-	height: 3%;
-	align-items:center;
-	justify-content:center;
-	/*
-	line-height: 0;*/
-}
-
-body {
-	font-family: 'acme'; 
-	display:flex;
-	background-color:darkslategray;
-	align-content:flex-start;
-	color:rgb(66,66,66);
-}
-
-
+/*------ Définition police ACME -------*/
 @font-face {
 	font-family: 'acme';
 	src: url('acme/acme-regular-webfont-webfont.eot');
@@ -47,21 +7,152 @@ body {
 	font-style: normal;
 }
 
+/*------ TOUTE LA PAGE -----(body = #lisere + #contenu)---*/
+
+body {
+	font-family: 'acme',Arial;
+	display: flex;
+	color: rgb(66,66,66);
+	background:rgb(66,66,66);
+	font-size:1.2em;
+}
 
 
+/*-------------PARTIE DROITE----(#contenu = header + #corps)--------*/
+#contenu { 
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(255,253,231,1);
+	text-align: left;
+	width:67%;
+}
 
+/*-------------ENTETE------------*/
+h1 {	/*Mon nom en entête*/
+	margin: 0;
+	color: rgb(0,0,0);
+}
 
-
-	@font-face {
-		font-family: 'amblebold';
-		src: url('amble/Amble-Bold-webfont.eot');
-		src: url('amble/Amble-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('amble/Amble-Bold-webfont.woff2') format('woff2'), url('amble/Amble-Bold-webfont.woff') format('woff'), url('amble/Amble-Bold-webfont.ttf') format('truetype'), url('amble/Amble-Bold-webfont.svg#amblebold') format('svg');
-		font-weight: normal;
-		font-style: normal;
+header {
+	display: flex;
+	flex-direction: column;
+	height: 15%;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 2em;
+	margin-top: 10%;
+	margin-bottom: 5%;
 	}
-	/*LISERÉ*/
-	/*ma photo*/
-	#cercle {
+
+h1 span { /*Mis en couleur de mon prénom*/
+	color: rgb(255,234,0);
+}
+
+header p span { /*soulignées les 5 1res lettres de Développeuse*/
+	border-bottom: 3px solid rgb(255,234,0);
+}
+
+header p {	/*Ma fonction*/
+	margin: 0;
+}
+
+/*------CORPS DU CV -------------*/
+
+#corps {
+	color: rgb(66,66,66);
+	padding: 2%;
+	padding-left: 5%;
+	padding-right: 5%;
+	display: flex;
+	flex-direction: column;
+	height: 88%;
+	}
+
+h3 { /* Titres des sous-parties*/
+	text-align: left;
+	color: black;
+	font-size: 1.8em;
+	border-bottom: 3px solid rgb(255,234,0);
+	text-transform: uppercase;
+	line-height: 2.5em;
+	vertical-align: middle;
+	margin-bottom: 5%;
+	}
+
+h3 i {	/*Icones devant les sous-titres*/
+	margin-right: 1em;
+	color: rgb(255,234,0);
+	font-size: 1.3em;
+	}
+
+.liste {	/*----1 ligne de puce--- (.liste = aside + article)---*/
+	display: flex;
+	margin-bottom: 20px;
+}
+
+aside {	/*--- Case gauche (avec puce) du développement ----*/
+	width: 28%;
+	margin-left: 1em;
+	vertical-align: text-top;
+}
+
+article { /*--- Case droite du développement ----*/
+	display: flex;
+	width: 72%;
+	flex-direction: column;
+	padding-top: 0.2em;
+}
+
+h4 {	/*Titres des articles (Diplomes / Fonctions du poste)*/
+	margin: 0;
+	font-weight: bold;
+}
+
+ul {	/*Suppression des puces*/
+	margin: 0;
+	padding-left: 1em;
+	list-style: none;
+}
+
+.double:before { /*remplacement de la puce par double cercle plein _ 1re puce*/
+	content: "\0025C9"; /*puce en forme de doucle cercle forme pleine*/
+	color: rgb(255,234,0);
+	display: inline-block;
+	width: 1.7em;
+	margin-left: -1.7em;
+	font-size: 1.3em;
+}
+
+li:before { /*remplacement de la puce par cercle plein*/
+	content: "\002B24"; /*puce en forme de cercle plein*/
+	color: rgb(255,234,0);
+	display: inline-block;
+	width: 2em;
+	margin-left: -2em;
+}
+
+#reco {	/*--Partie RECOMMANDATIONS--*/
+	display: flex;
+}
+
+/*------PARTIE GAUCHE ------------ LISERÉ ------*/
+#lisere {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 33%;
+	background-color: rgb(255,234,0);
+	color: rgb(66,66,66);
+	order: -1;		/*Pour affichage du #liseré à gauche de #contenu*/
+}
+
+#photo_moi {	/*--Ma photo--*/
+	position: relative;
+	top: -8px;
+	left:-5px;
+}
+
+#cercle {	/*--Cercle pour la photo--*/
 	display: inline-block;
 	width: 168px;
 	height: 168px;
@@ -72,63 +163,45 @@ body {
 	border: 4px solid rgba(0,0,0,0.1);
 }
 
-#photo_moi
-{
-	width:inherit;
-	height:inherit;
-	border-radius:inherit;
-	position:relative;
-	top:-20px;
-}
-
-/*le bandeau jaune*/
-
-#lisere {
+h2 { /*Titres bandeau dans liseré*/
 	display: flex;
-	flex-direction: column;
-	text-align: center;
-	width: 33%;
-	background-color: rgb(255,234,0);
-	color: rgb(66,66,66);
-	order: -1;
-		
+	background-color: rgb(66,66,66);
+	color: rgb(255,234,0);
+	height: 3%;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.8em;
 }
-#lisere p {
-		padding-left: 14%;
-		padding-right: 14%;
-	}
 
+#lisere p { /*Tous les paragraphes*/
+	padding-left: 14%;
+	padding-right: 14%;
+}
 
-
-.contact{
-	text-align:left;
-	
-	}
-
-.contact_dern {
+.contact {	/* Textes de la partie CONTACT*/
 	text-align: left;
-	margin-bottom:5%;
 }
 
-
-
-#propos{
-	text-align:justify;
-	hyphens:auto;
-	margin-bottom:auto;
+.contact_dern { /* Dernier texte de la partie CONTACT*/
+	text-align: left;
+	margin-bottom: 5%;
 }
 
-#loisirs{
+#propos { /* Textes de la partie A PROPOS DE MOI*/
+	text-align: justify;
+	hyphens: auto;
+	margin-bottom: auto;
+}
+
+#loisirs{	/*Partie LOISIRS*/
 	display:flex;
 	justify-content:center;
 	}
 
-/*les icones loisirs*/
-
-#lisere i {
+#lisere i { /*les icones loisirs*/
 	display: inline-block;
-	width: 30px;
-	height: 30px;
+	width: 1em;
+	height: 1em;
 	border-radius: 50%;
 	border: 3px solid rgb(66,66,66);
 	padding: 1%;
@@ -139,119 +212,13 @@ body {
 	overflow: hidden;
 }
 
-/*Partie droite du CV*/
-#contenu {
-	display: flex;
-	flex-direction: column;
-	background-color: azure;
-	text-align:left;
-}
-
-h1{
-	/*border:1px dotted blue;*/
-	font-size:3em;
-	margin:0;
-	color:rgb(0,0,0);
-}
 
 
 
-header {
-	display: flex;
-	flex-direction: column;
-	height: 15%;
-	padding-left: 5%;
-	padding-right: 5%;
-	font-size: 2em;
-	margin-top: 10%;
-	margin-bottom: 10%;
-}
-
-	h1 span {	/*Mis en couleur de mon prénom*/
-		color: rgb(255,234,0);
-	}
-
-header p span { /*soulignées les 5 1res lettres de Développeuse*/
-	border-bottom: 3px solid rgb(255,234,0);
-	}
-
-header p{
-	margin:0;
-}
 
 
-#corps {
-	color: darkslategray;
-	padding: 10px;
-	padding-left: 5%;
-	padding-right: 5%;
-	display: flex;
-	flex-direction: column;
-	height: 88%;
-}
 
 
-ul{
-	margin:0;
-	padding-left:1em;
-	list-style:none;
-	}
-
-
-	li:before { /*remplacement de la puce par cercle plein*/
-		content: "\002B24"; /*puce en forme de cercle plein*/
-		color: rgb(255,234,0);
-		display: inline-block;
-		width: 2em;
-		margin-left: -2em;
-	}
-
-.double:before { /*remplacement de la puce par double cercle plein _ 1re puce*/
-	content: "\0025C9"; /*puce en forme de doucle cercle forme pleine*/
-	color: rgb(255,234,0);
-	display: inline-block;
-	width: 1.7em;
-	margin-left: -1.7em;
-	font-size:1.3em;
-}
-
-
-.liste{
-	/*border:2px dashed green;*/
-	display:flex;
-	margin-bottom:20px;
-	
-}
-
-.compet {
-	font-size: 18px;
-}
-
-aside{
-	width:28%;
-	font-size:16px;
-	margin-left:1em;
-	vertical-align:text-top;
-	
-	}
-
-article {
-	display: flex;
-	width: 80%;
-	flex-direction: column;
-	font-size: 18px;
-	padding-top:0.2em;
-	
-}
-
-h4{
-	margin:0;
-	font-weight:bold;
-}
-
-#reco{
-	display:flex;
-}
 
 /*@media all and (max-width: 1024px)
 {
