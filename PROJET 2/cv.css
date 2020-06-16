@@ -11,21 +11,20 @@
 
 body {
 	font-family: 'acme',Arial;
-	display: flex;
+	display:flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+	/*align-items:stretch;*/
 	color: rgb(66,66,66);
-	background:rgb(66,66,66);
-	font-size:1.2em;
+	background-color: rgba(255,253,231,1);
+	font-size: 1.2em;
+	text-align: left;
+	height:215vh;
+	
 }
 
 
 /*-------------PARTIE DROITE----(#contenu = header + #corps)--------*/
-#contenu { 
-	display: flex;
-	flex-direction: column;
-	background-color: rgba(255,253,231,1);
-	text-align: left;
-	width:67%;
-}
 
 /*-------------ENTETE------------*/
 h1 {	/*Mon nom en entête*/
@@ -36,12 +35,16 @@ h1 {	/*Mon nom en entête*/
 header {
 	display: flex;
 	flex-direction: column;
-	height: 15%;
+	/*position:relative;
+	left:33%;*/
+	height: 5%;
 	padding-left: 5%;
 	padding-right: 5%;
 	font-size: 2em;
 	margin-top: 10%;
 	margin-bottom: 5%;
+	width:57%;
+	order:1;
 	}
 
 h1 span { /*Mis en couleur de mon prénom*/
@@ -59,14 +62,22 @@ header p {	/*Ma fonction*/
 /*------CORPS DU CV -------------*/
 
 #corps {
+	display: flex;
+	flex-direction: column;
+	/*position: relative;
+	left: 33%;
+	top:45%;*/
+	/*align-self:baseline;*/
 	color: rgb(66,66,66);
 	padding: 2%;
 	padding-left: 5%;
 	padding-right: 5%;
-	display: flex;
-	flex-direction: column;
-	height: 88%;
-	}
+	width: 57%;
+	height: 75%;
+	/*align-self:flex-end;*/
+	order:1;
+	
+}
 
 h3 { /* Titres des sous-parties*/
 	text-align: left;
@@ -101,6 +112,8 @@ article { /*--- Case droite du développement ----*/
 	width: 72%;
 	flex-direction: column;
 	padding-top: 0.2em;
+	text-align: justify;
+	hyphens: auto;
 }
 
 h4 {	/*Titres des articles (Diplomes / Fonctions du poste)*/
@@ -133,34 +146,39 @@ li:before { /*remplacement de la puce par cercle plein*/
 
 #reco {	/*--Partie RECOMMANDATIONS--*/
 	display: flex;
+	
 }
 
-/*------PARTIE GAUCHE ------------ LISERÉ ------*/
+/*------PARTIE GAUCHE ------------ LISERÉ -------------------*/
 #lisere {
 	display: flex;
 	flex-direction: column;
+	/*position:absolute;*/
 	text-align: center;
 	width: 33%;
 	background-color: rgb(255,234,0);
 	color: rgb(66,66,66);
-	order: -1;		/*Pour affichage du #liseré à gauche de #contenu*/
+	/*order: -1;*/ /**/ /*Pour affichage du #liseré à gauche de #contenu*/
+	height:98%;
 }
 
 #photo_moi {	/*--Ma photo--*/
 	position: relative;
 	top: -8px;
-	left:-5px;
+	left:-10px;
 }
 
 #cercle {	/*--Cercle pour la photo--*/
 	display: inline-block;
-	width: 168px;
-	height: 168px;
+	width: 300px;
+	height: 300px;
 	border-radius: 50%;
 	overflow: hidden;
 	margin-left:auto;
 	margin-right:auto;
 	border: 4px solid rgba(0,0,0,0.1);
+	margin-top:10%;
+	margin-bottom:5%;
 }
 
 h2 { /*Titres bandeau dans liseré*/
@@ -187,11 +205,18 @@ h2 { /*Titres bandeau dans liseré*/
 	margin-bottom: 5%;
 }
 
-#propos { /* Textes de la partie A PROPOS DE MOI*/
-	text-align: justify;
-	hyphens: auto;
+#propos { /* Partie A PROPOS DE MOI*/
 	margin-bottom: auto;
+	align-self:stretch;
 }
+
+
+	#propos p { /* Textes de la partie A PROPOS DE MOI*/
+		display: flex;
+		text-align: justify;
+		hyphens: auto;
+		
+	}
 
 #loisirs{	/*Partie LOISIRS*/
 	display:flex;
@@ -212,18 +237,31 @@ h2 { /*Titres bandeau dans liseré*/
 	overflow: hidden;
 }
 
+/*----------------MEDIA QUERIES------site responsive------------------*/
 
+/*@media all and (max-width: 992px)*/ /*Format tablette*/
+/*{
+	body {
+		flex-direction: column;
+	}
 
+	header{
+		display:flex;
+	}
 
+	#lisere {
+		flex-direction: row;
+		width: 100%;
+		order: 0;
+	}
 
+	.sous_lisere {
+		flex-direction: column;
+		margin: 1%;
+	}
 
-
-
-
-/*@media all and (max-width: 1024px)
-{
-	#lisere
-	{
+	#contenu {
+		width: 100%;
 		display:none;
 	}
 
@@ -233,9 +271,10 @@ h2 { /*Titres bandeau dans liseré*/
 		position:absolute;
 		left:0;
 		width:auto;
+		order:1;
 	}
 
 
 
-}
-*/
+}*/
+
