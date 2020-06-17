@@ -11,15 +11,15 @@
 
 body {
 	font-family: 'acme',Arial;
-	display:flex;
-	flex-direction:column;
-	flex-wrap:wrap;
-	/*align-items:stretch;*/
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	/*align-items: stretch;*/
 	color: rgb(66,66,66);
 	background-color: rgba(255,253,231,1);
 	font-size: 1.2em;
 	text-align: left;
-	height:100em;
+	height: 115em;
 	
 }
 
@@ -41,10 +41,12 @@ header {
 	padding-left: 5%;
 	padding-right: 5%;
 	font-size: 2em;
-	justify-content:center;
-	width:57%;
-	order:1;
-	}
+	justify-content: center;
+	width: 67%;
+	order: 1;
+	box-sizing:border-box;
+	
+}
 
 h1 span { /*Mis en couleur de mon prénom*/
 	color: rgb(255,234,0);
@@ -66,15 +68,14 @@ header p {	/*Ma fonction*/
 	/*position: relative;
 	left: 33%;
 	top:45%;*/
-	/*align-self:baseline;*/
 	color: rgb(66,66,66);
 	padding: 2%;
 	padding-left: 5%;
 	padding-right: 5%;
-	width: 57%;
-	height: 75%;
-	/*align-self:flex-end;*/
+	width: 67%;
+	height: 82%;
 	order:1;
+	box-sizing:border-box;
 	
 }
 
@@ -87,6 +88,7 @@ h3 { /* Titres des sous-parties*/
 	line-height: 2.5em;
 	vertical-align: middle;
 	margin-bottom: 5%;
+	margin-top:auto;	/*ajuster cet espace pour que le corps soit aligné en bas de page avec liseré*/
 	}
 
 h3 i {	/*Icones devant les sous-titres*/
@@ -144,8 +146,8 @@ li:before { /*remplacement de la puce par cercle plein*/
 
 #reco {	/*--Partie RECOMMANDATIONS--*/
 	display: flex;
-	
-}
+	margin-bottom:4%;
+	}
 
 /*------PARTIE GAUCHE ------------ LISERÉ -------------------*/
 #lisere {
@@ -156,8 +158,9 @@ li:before { /*remplacement de la puce par cercle plein*/
 	width: 33%;
 	background-color: rgb(255,234,0);
 	color: rgb(66,66,66);
-	height:auto;
-
+	height: 100%;
+	box-sizing: border-box;
+	/*order:1;*/
 }
 
 #photo_moi {	/*--Ma photo--*/
@@ -206,7 +209,7 @@ h2 { /*Titres bandeau dans liseré*/
 
 #propos { /* Partie A PROPOS DE MOI*/
 	margin-bottom: auto;
-	align-self:stretch;
+	
 }
 
 
@@ -223,8 +226,14 @@ h2 { /*Titres bandeau dans liseré*/
 	justify-content:center;
 	}
 
+	#loisirs div {
+		display: flex;
+		justify-content: center;
+		margin-top: 5%;
+		margin-bottom: 10%;
+	}
+
 #lisere i { /*les icones loisirs*/
-	display: inline-block;
 	width: 1em;
 	height: 1em;
 	border-radius: 50%;
@@ -232,8 +241,6 @@ h2 { /*Titres bandeau dans liseré*/
 	padding: 1%;
 	margin-left: 2%;
 	margin-right: 2%;
-	margin-top: 5%;
-	margin-bottom: 5%;
 	overflow: hidden;
 }
 
@@ -255,13 +262,12 @@ h2 { /*Titres bandeau dans liseré*/
 	#lisere {
 		flex-direction: row;
 		width: 100%;
-		
 	}
 
-		#lisere p { /*Tous les paragraphes*/
-			padding-left: 8%;
-			padding-right: 8%;
-		}
+	#lisere p { /*Tous les paragraphes*/
+		padding-left: 4%;
+		padding-right: 4%;
+	}
 
 	#cercle {
 		height: 100px;
@@ -269,7 +275,6 @@ h2 { /*Titres bandeau dans liseré*/
 		margin-top: 0%;
 		margin-left:0.1em;
 		margin-right:0.1em;
-		
 	}
 
 	#photo_moi {
@@ -278,45 +283,83 @@ h2 { /*Titres bandeau dans liseré*/
 		top: 0px;
 		left: 0px;
 	}
+
 	h2 {
 		margin-left: 1%;
 		margin-right: 1%;
-		padding-left: 20%;
-		padding-right: 20%;
+		font-size: 1.3em;
+		padding-left:10%;
+		padding-right:10%;
+	}
+
+	#propos{
+		width:55%;
 	}
 
 	#loisirs{	/*Partie LOISIRS*/
 	justify-content:flex-start;
-			}
-
-	#lisere i { /*les icones loisirs*/
-		display: flex;
-		margin-left: auto;
-		margin-right: auto;
+	width:auto;
+	}
+	
+	#lisere i {		/*les icones loisirs */
+		margin:2%;
 	}	
+
+	#loisirs div{
+		flex-wrap:wrap;
+		margin-left:5%;
+		margin-right:5%;
+	}
 		
 	#corps{
-		width:90%;
+		width:100%;
 	}	
 		
-		/*.sous_lisere {
-		flex-direction: column;
-		margin: 1%;
-	}
+}
 
-	#contenu {
-		width: 100%;
+@media screen and (max-width: 768px) /*Format mobile*/
+{
+	#cercle {
 		display:none;
 	}
 
-	#corps
-	{
-		flex-direction: column;
-		position:absolute;
-		left:0;
-		width:auto;
-		order:1;
+	body{
+		color:blue;
 	}
-*/
+	#propos {
+		width: 55%;
 	}
 
+	#loisirs { /*Partie LOISIRS*/
+		width: auto;
+	}
+}
+
+@media all and (max-device-width: 480px) /*Format mobile____Fonctionne sur Chrome*/
+{
+	#cercle {
+		display: none;
+	}
+
+	body {
+		color: red;
+	}
+
+	#propos {
+		width: 30%;
+	}
+
+	#loisirs { /*Partie LOISIRS*/
+		width: 25%;
+		border:1px solid red;
+	}
+
+	.contact{
+		width:45%;
+	}
+
+	#lisere {
+		
+		width: 100%;
+	}
+}
