@@ -7,14 +7,13 @@
 	font-style: normal;
 }
 
-/*------ TOUTE LA PAGE -----(body = #lisere + #contenu)---*/
+/*------ TOUTE LA PAGE -----(body = #lisere + header + #corps)---*/
 
 body {
 	font-family: 'acme',Arial;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	/*align-items: stretch;*/
 	color: rgb(66,66,66);
 	background-color: rgba(255,253,231,1);
 	font-size: 1.2em;
@@ -25,8 +24,6 @@ body {
 }
 
 
-/*-------------PARTIE DROITE----(#contenu = header + #corps)--------*/
-
 /*-------------ENTETE------------*/
 h1 {	/*Mon nom en entête*/
 	margin: 0;
@@ -36,8 +33,6 @@ h1 {	/*Mon nom en entête*/
 header {
 	display: flex;
 	flex-direction: column;
-	/*position:relative;
-	left:33%;*/
 	height: 18%;
 	padding-left: 5%;
 	padding-right: 5%;
@@ -66,9 +61,6 @@ header p {	/*Ma fonction*/
 #corps {
 	display: flex;
 	flex-direction: column;
-	/*position: relative;
-	left: 33%;
-	top:45%;*/
 	color: rgb(66,66,66);
 	padding: 2%;
 	padding-left: 5%;
@@ -82,15 +74,15 @@ header p {	/*Ma fonction*/
 
 h3 { /* Titres des sous-parties*/
 	text-align: left;
-	color: black;
+	color: rgb(0,0,0);
 	font-size: 1.8em;
 	border-bottom: 3px solid rgb(255,234,0);
 	text-transform: uppercase;
 	line-height: 2.5em;
 	vertical-align: middle;
 	margin-bottom: 5%;
-	margin-top:auto;	/*ajuster cet espace pour que le corps soit aligné en bas de page avec liseré*/
-	}
+	margin-top: auto; /*ajuster cet espace pour que le corps soit aligné en bas de page avec liseré*/
+}
 
 h3 i {	/*Icones devant les sous-titres*/
 	margin-right: 1em;
@@ -100,16 +92,16 @@ h3 i {	/*Icones devant les sous-titres*/
 
 .liste {	/*----1 ligne de puce--- (.liste = aside + article)---*/
 	display: flex;
-	align-items:baseline;
+	align-items:baseline;	/*Aligner la 1re ligne de aside et celle de article*/
 	margin-bottom: 1em;
 }
 
-aside {	/*--- Case gauche (avec puce) du développement ----*/
+aside {	/*--- Case gauche (avec puce) du corps ----*/
 	width: 28%;
 	margin-left: 1em;
 	}
 
-article { /*--- Case droite du développement ----*/
+article { /*--- Case droite du corps ----*/
 	display: flex;
 	width: 72%;
 	flex-direction: column;
@@ -154,21 +146,18 @@ li:before { /*remplacement de la puce par cercle plein*/
 #lisere {
 	display: flex;
 	flex-direction: column;
-	/*position:absolute;*/
 	text-align: center;
 	width: 33%;
 	background-color: rgb(255,234,0);
 	color: rgb(66,66,66);
 	height: 100%;
 	box-sizing: border-box;
-	/*order:1;*/
-}
+	}
 
 #photo_moi {	/*--Ma photo--*/
 	position: relative;
 	top: -8px;
 	left:-10px;
-	
 }
 
 #cercle {	/*--Cercle pour la photo--*/
@@ -203,22 +192,19 @@ h2 { /*Titres bandeau dans liseré*/
 	text-align: left;
 }
 
-.contact_dern { /* Dernier texte de la partie CONTACT*/		/*???peut-être à remplacer par #partie-contact pour le bottom ??*/
-	text-align: left;
-	margin-bottom: 5%;
+#partie_contact{
+	margin-bottom:3%;
 }
 
 #propos { /* Partie A PROPOS DE MOI*/
-	margin-bottom: auto;
-	
+	margin-bottom: auto;	/*Ajustement pour permettre que "loisirs" se mette bien en bas de page*/
 }
 
-
-	#propos p { /* Textes de la partie A PROPOS DE MOI*/
-		display: flex;
-		text-align: justify;
-		hyphens: auto;
-		}
+#propos p { /* Textes de la partie A PROPOS DE MOI*/
+	display: flex;
+	text-align: justify;
+	hyphens: auto;
+	}
 
 #loisirs{	/*Partie LOISIRS*/
 	display:flex;
@@ -226,12 +212,12 @@ h2 { /*Titres bandeau dans liseré*/
 	justify-content:center;
 	}
 
-	#loisirs div {
-		display: flex;
-		justify-content: center;
-		margin-top: 5%;
-		margin-bottom: 10%;
-	}
+#loisirs div {
+	display: flex;
+	justify-content: center;
+	margin-top: 5%;
+	margin-bottom: 10%;
+}
 
 #lisere i { /*les icones loisirs*/
 	width: 1em;
@@ -249,133 +235,132 @@ h2 { /*Titres bandeau dans liseré*/
 /*--------Format tablette---------*/
 @media all and (max-width: 992px) 
 {
-	body {
-		flex-wrap: nowrap;
+body {
+	flex-wrap: nowrap;
 	}
 
-	header{
-		order:0;
-		width:100%;
-		padding-bottom:5%;
-		padding-top:5%;
+header{
+	order:0;
+	width:100%;
+	padding-bottom:5%;
+	padding-top:5%;
 	}
 
-	#lisere {
-		flex-direction: row;
-		flex-wrap: wrap;
-		width: 100%;
-		
+#lisere {
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
 	}
 
-	#lisere p { /*Tous les paragraphes*/
-		padding-left: 4%;
-		padding-right: 4%;
+#lisere p { /*Tous les paragraphes*/
+	padding-left: 4%;
+	padding-right: 4%;
 	}
 
-	#cercle {
-		height: 250px;
-		width: 250px;
-		margin-top:15%;
-		
+#cercle {
+	height: 250px;
+	width: 250px;
+	margin-top:15%;
 	}
 
-	#photo_moi {
-		height: 250px;
-		width: 250px;
-		top: 0px;
-		left: 0px;
+#photo_moi {
+	height: 250px;
+	width: 250px;
+	top: 0px;
+	left: 0px;
 	}
 
-	#photo {
-		width: 50%;
-		
+#photo {
+	width: 50%;
 	}
 
-	#partie_contact {
-		width: 50%;
-		
+#partie_contact { /*Partie CONTACT*/
+	width: 50%;
 	}
 
-	h2 {
-		margin-left: 2%;
-		margin-right: 2%;
-		font-size: 1.3em;
-		
+h2 {
+	margin-left: 2%;
+	margin-right: 2%;
+	font-size: 1.3em;
+}
+
+#propos { /*Partie A PROPOS DE MOI*/
+	width: 50%;
+	margin-bottom: 4%;
 	}
 
-	#propos {
-		width: 50%;
-		margin-bottom: 4%;
-		
-	}
-
-	#loisirs { /*Partie LOISIRS*/
-		justify-content: flex-start;
-		width: 50%;
-		
+#loisirs { /*Partie LOISIRS*/
+	justify-content: flex-start;
+	width: 50%;
 	}
 	
-	#lisere i {		/*les icones loisirs */
-		margin:2%;
+#lisere i {		/*les icones loisirs */
+	margin:2%;
 	}	
 
-	#loisirs div{
-		flex-wrap:wrap;
-		margin-left:5%;
-		margin-right:5%;
-	}
-		
-	#corps{
-		width:100%;
+#corps{
+	width:100%;
 	}	
-		
+	
+aside{
+	width:32%;
+	padding-right:4%;
+	}
+
+article {
+	width: 68%;
+	}
 }
 
 /*---------Format mobile---------*/
-@media screen and (max-width: 767px) {
+@media all and (max-width: 767px) {
 	
-	#lisere {
-		flex-direction: column;
-		width: 100%;
+#lisere {
+	flex-direction: column;
+	width: 100%;
 	}
 
-	#cercle {
-		height: 250px;
-		width: 250px;
-		margin-top: 10%;
+#cercle {
+	height: 250px;
+	width: 250px;
+	margin-top: 10%;
 	}
 
-	#photo_moi {
-		height: 250px;
-		width: 250px;
-		top: 0px;
-		left: 0px;
+#photo_moi {
+	height: 250px;
+	width: 250px;
+	top: 0px;
+	left: 0px;
 	}
 
-	#photo,#partie_contact,#propos,#loisirs{
-		width:100%;
+#photo,#partie_contact,#propos,#loisirs{ /*Les 4 parties du liseré*/
+	width:100%;
 	}
 
-	.liste,#reco{
-		flex-direction:column;
+h2 {
+	margin-left: 0%;
+	margin-right: 0%;
 		}
 
-	.liste aside,.liste article{
-		width:100%;
+.liste,#reco{
+	flex-direction:column;
+		}
+
+.liste aside,.liste article{
+	width:100%;
 	}
 
-	.liste br{
-		display:none;
+.liste br{	/*Supprimer les retours à la ligne fait dans aside*/
+	display:none;
 	}
 
-	aside{
-		margin-bottom:4%;
+aside{
+	margin-bottom:4%;
 	}
 
-	.liste article p{
-		margin-top:2%;
+.liste article p{
+	margin-top:2%;
 	}
-
 }
 
 
